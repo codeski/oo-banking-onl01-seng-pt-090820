@@ -17,7 +17,6 @@ class Transfer
  
   def execute_transaction
     if @status == "complete" || @status == "rejected"
-      @status = "rejected"
     elsif
       @sender.valid? && @receiver.valid? && @sender.balance - @amount > 0
       @sender.balance -= @amount
@@ -34,9 +33,6 @@ class Transfer
       @sender.balance += @amount 
       @reciever.blance -= @amount 
     end 
-    
-     
-
   end
  
 end
